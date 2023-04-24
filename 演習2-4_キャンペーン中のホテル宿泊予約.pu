@@ -1,7 +1,14 @@
-@startuml キャンペーン
-rectangle 予約 {
-usecase キャンペーン期間
-usecase キャンペーン
+@startuml ユースケース図
+left to right direction
+
+actor 利用者
+rectangle ホテル宿泊予約 {
+usecase キャンペーン価格にする
+usecase (<u>予約</u>\nextention points\nキャンペーン期間) as text
+usecase ログイン
 }
-キャンペーン .> キャンペーン期間 : << extend >>
+
+ログイン <. text : << include >>
+利用者 --> text
+text <.. キャンペーン価格にする : << extend >>
 @enduml
