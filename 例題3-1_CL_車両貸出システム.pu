@@ -22,7 +22,7 @@ class 予約{
     - 予約番号:int
     - 管理番号:String
     - 日付:int
-    - 顧客ID:String
+    - 顧客ID:int
 
 }
 class 空車リスト{
