@@ -1,0 +1,27 @@
+@startuml 雇用形態
+class 従業員 {
+---
++ Walk:void
++ {abstract} eat():int
++ {abstract} cry():void
+}
+class 派遣 {
+---
++ eat():int
++ cry():void
+}
+class 契約 {
+---
++ eat():int
++ cry():void
+}
+
+class 正社員 {
+---
++ eat():int
++ cry():void
+}
+従業員 <|-down- 派遣
+従業員 <|-down- 契約
+従業員 <|-down- 正社員
+@enduml

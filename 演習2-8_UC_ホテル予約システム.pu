@@ -1,28 +1,27 @@
-@startuml ホテル予約システム
-actor 利用者
-actor ホテル従業員
-actor ホテル管理者
-rectangle 従業員登録システム {
-    usecase 従業員ログイン
-    usecase 管理者ログイン
-    usecase 会員登録
-    usecase 空室情報の閲覧
-    usecase 部屋の予約
-    usecase 空室情報の入力
-    usecase 予約の集計
-    usecase 利用者ログイン
-    usecase キャンペーン価格にする
-    usecase (<u>予約</u>\nextention points\nキャンペーン期間) as text
+@startuml ユースケース図
+left to right direction
+
+  actor 利用者 as a #DDDDDD;line:black;line.bold;
+  actor 従業員 as b #DDDDDD;line:black;line.bold;
+  actor 管理者 as c #DDDDDD;line:black;line.bold;
+
+rectangle ホテル予約システム {
+usecase 空室状況を閲覧する as d
+usecase 予約の集計をする as e
+usecase 会員登録をする as f
+usecase (<u>予約</u>\n拡張点\nキャンペーン期間\n会員登録) as g
+usecase ログイン as h
+usecase 空室状況を入力する as i
+usecase キャンペーン as j
 }
-ホテル従業員 --> 従業員ログイン
-ホテル管理者 --> 管理者ログイン
-利用者 --> 会員登録
-利用者 --> 空室情報の閲覧
-会員登録 --> 部屋の予約
-従業員ログイン --> 空室情報の入力
-管理者ログイン --> 予約の集計
-会員登録 --> text
-text <.. キャンペーン価格にする : << extend >>
-利用者ログイン <. text : << include >>
-利用者ログイン <. 部屋の予約 : << include >>
+a--->f
+j ...>(g) : <<extend>>
+a--->d
+b<|---c
+c--->e
+b-->i
+f ...>(g) : <<extend>>
+g ..>(h) : <<include>>
+e ..>(h) : <<include>>
+i ..>(h) : <<include>>
 @enduml
