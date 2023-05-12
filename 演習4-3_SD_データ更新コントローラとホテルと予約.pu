@@ -1,0 +1,30 @@
+@startuml データ更新コントローラ
+    hide footbox
+    autonumber
+    skinparam style strictuml
+
+   
+    participant "controller:<u>データ更新コントローラ</u>" as kousin
+    participant "予約:<u>ホテル</u>" as yoyaku
+   
+
+
+        activate kousin
+            activate yoyaku 
+               
+
+                
+                kousin -> yoyaku:予約()
+               
+                create "予約" as aaa
+                yoyaku -->> aaa:予約()
+                yoyaku -> yoyaku
+                activate yoyaku
+                
+
+              
+             
+            deactivate yoyaku
+        deactivate kousin
+    
+@enduml
