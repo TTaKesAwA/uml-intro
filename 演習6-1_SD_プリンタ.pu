@@ -1,0 +1,12 @@
+@startuml 基本構成
+left to right direction
+[*] --> 待機中 
+
+state c <<choice>>
+state c <<choice>>
+待機中 --> c
+c --> 用紙無し :用紙が不足
+c --> 印刷中 :用紙が充分
+用紙無し --> 印刷中 :用紙を追加
+印刷中 --> [*] : 印刷完了
+@enduml
