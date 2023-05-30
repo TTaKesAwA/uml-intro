@@ -1,0 +1,14 @@
+@startuml 注釈
+title 注釈の書き方
+start
+
+:ご飯を茶碗に盛る;
+-> 
+:卵をのせる;
+note right
+お好みで白身とご飯を混ぜます
+end note
+:醤油をかける;
+:卵かけご飯完成]
+stop
+@enduml
