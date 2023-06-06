@@ -1,4 +1,4 @@
-@startuml ライントレーサー
+@startuml ハンバーガーショップ
 class 注文{
     合計
 }
